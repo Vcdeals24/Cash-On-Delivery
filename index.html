@@ -103,15 +103,20 @@
         </div>
 
         <div class="form-group">
-            <label for="house">House no./Building Name:</label>
-            <input type="text" id="house" name="house" placeholder="Enter House no./Building Name" required>
+            <label for="contact">Mobile Number:</label>
+            <input type="text" id="contact" name="contact" placeholder="Enter Mobile Number" required>
         </div>
 
         <div class="form-group">
-            <label for="nameContact">Name & Contact Number:</label>
+            <label for="name">Name:</label>
             <input type="text" id="nameContact" name="nameContact" placeholder="Enter Name & Contact Number" required>
         </div>
 
+        <div class="form-group">
+            <label for="house">House no./Building Name:</label>
+            <input type="text" id="house" name="house" placeholder="Enter House no./Building Name" required>
+        </div>
+        
         <div class="form-group">
             <label for="area">Road Name/Area/Colony:</label>
             <input type="text" id="area" name="area" placeholder="Enter Road Name/Area/Colony" required>
@@ -150,7 +155,7 @@
 </div>
 
 <a href="https://telegram.me/Vcdeals24" target="_blank" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
-    <img src="https://telegram.org/favicon.ico" alt="Telegram Logo" style="width: 40px; height: 40px;">
+    <img src="https://telegra.ph/file/1a1642f4b13a6330d2d3f.jpg" alt="Telegram Logo" style="width: 60px; height: 60px;">
 </a>
 
 <script>
@@ -158,8 +163,9 @@
 
     function submitOrder() {
         var productNumber = document.getElementById('productNumber').value;
+        var contact = document.getElementById('contact').value;
+        var name = document.getElementById('name').value;
         var house = document.getElementById('house').value;
-        var nameContact = document.getElementById('nameContact').value;
         var area = document.getElementById('area').value;
         var nearby = document.getElementById('nearby').value;
         var pincode = document.getElementById('pincode').value;
@@ -173,8 +179,9 @@
 
         var orderDetails = {
             productNumber: productNumber,
+            contact: contact,
+            name: name,
             house: house,
-            nameContact: nameContact,
             area: area,
             nearby: nearby,
             pincode: pincode,
