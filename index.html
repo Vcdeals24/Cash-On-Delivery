@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>VCdeals24 COD 🚚</title>
     <link rel="icon" type="image/png" href="https://telegra.ph/file/1a1642f4b13a6330d2d3f.jpg">
     <style>
@@ -149,6 +149,10 @@
     </div>
 </div>
 
+<a href="https://telegram.me/Vcdeals24" target="_blank" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
+    <img src="https://telegram.org/favicon.ico" alt="Telegram Logo" style="width: 40px; height: 40px;">
+</a>
+
 <script>
     var orders = [];
 
@@ -194,4 +198,17 @@
         var ordersList = document.getElementById('ordersList');
         ordersList.innerHTML = '';
 
-        orders.forEach(function
+        orders.forEach(function(order) {
+            var listItem = document.createElement('li');
+            listItem.textContent = JSON.stringify(order);
+            ordersList.appendChild(listItem);
+        });
+
+        document.getElementById('ordersContainer').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
+
+            
