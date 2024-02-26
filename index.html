@@ -67,28 +67,6 @@
         button:hover {
             background-color: #45a049;
         }
-
-        #adminAccess {
-            display: none;
-        }
-
-        #ordersContainer {
-            display: none;
-            padding: 10px;
-            border: 2px solid #fff;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-
-        #ordersList {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        #ordersList li {
-            margin-bottom: 10px;
-        }
     </style>
 </head>
 <body>
@@ -96,7 +74,7 @@
 <div class="container">
     <h1>Order Details</h1>
     <form id="orderForm" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="8c7c65a5-1cfb-415c-af09-07bf6155ef44">
+        <input type="hidden" name="access_key" value="53aace64-ac9b-4e4b-baa1-e154c6c416ba">
         <div class="form-group">
             <label for="productNumber">Product Number:</label>
             <input type="text" id="productNumber" name="productNumber" placeholder="Enter Product Number" required>
@@ -141,26 +119,16 @@
             <label for="state">State:</label>
             <input type="text" id="state" name="state" placeholder="Enter State" required>
         </div>
-
+        
         <button type="submit">Submit Order</button>
     </form>
-    <button id="adminAccess" onclick="showOrders()">Admin Access</button>
-    <div id="ordersContainer">
-        <h2>Orders</h2>
-        <ul id="ordersList"></ul>
-    </div>
-    <div id="confirmationMessage" style="display: none; color: green; text-align: center; margin-top: 20px;">
-        Your order has been submitted successfully!
-    </div>
 </div>
 
 <a href="https://telegram.me/Vcdeals24" target="_blank" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
-    <img src="https://telegra.ph/file/1a1642f4b13a6330d2d3f.jpg" alt="Telegram Logo" style="width: 60px; height: 60px;">
+    <img src="https://telegram.org/favicon.ico" alt="Telegram Logo" style="width: 60px; height: 60px;">
 </a>
 
 <script>
-    var orders = [];
-
     function submitOrder() {
         var productNumber = document.getElementById('productNumber').value;
         var contact = document.getElementById('contact').value;
@@ -189,33 +157,13 @@
             state: state
         };
 
-        orders.push(orderDetails);
-
-        document.getElementById('adminAccess').style.display = 'block';
+        // You can perform further actions with the order details if needed
 
         document.getElementById('confirmationMessage').style.display = 'block'; // Show confirmation message
-
         document.getElementById('orderForm').reset();
-
-        // No need to send email anymore, as the form submits directly to Web3Forms API
-        // sendEmail(orders);
-    }
-
-    function showOrders() {
-        var ordersList = document.getElementById('ordersList');
-        ordersList.innerHTML = '';
-
-        orders.forEach(function(order) {
-            var listItem = document.createElement('li');
-            listItem.textContent = JSON.stringify(order);
-            ordersList.appendChild(listItem);
-        });
-
-        document.getElementById('ordersContainer').style.display = 'block';
     }
 </script>
 
 </body>
-</html>
-
-            
+    </html>
+    
