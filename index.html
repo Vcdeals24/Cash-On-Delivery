@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VCdeals24 COD 🚚</title>
+    <link rel="icon" type="image/png" href="https://telegra.ph/file/1a1642f4b13a6330d2d3f.jpg">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-image: url('https://telegra.ph/file/0858aadb9a6a2aa126ef2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 1rem;
+            color: #000;
+            background-color: #fff;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #adminAccess {
+            display: none;
+        }
+
+        #ordersContainer {
+            display: none;
+            padding: 10px;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        #ordersList {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #ordersList li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Order Details</h1>
+    <form id="orderForm" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="8c7c65a5-1cfb-415c-af09-07bf6155ef44">
+        <div class="form-group">
+            <label for="productNumber">Product Number:</label>
+            <input type="text" id="productNumber" name="productNumber" placeholder="Enter Product Number" required>
+        </div>
+
+        <div class="form-group">
+            <label for="house">House no./Building Name:</label>
+            <input type="text" id="house" name="house" placeholder="Enter House no./Building Name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="nameContact">Name & Contact Number:</label>
+            <input type="text" id="nameContact" name="nameContact" placeholder="Enter Name & Contact Number" required>
+        </div>
+
+        <div class="form-group">
+            <label for="area">Road Name/Area/Colony:</label>
+            <input type="text" id="area" name="area" placeholder="Enter Road Name/Area/Colony" required>
+        </div>
+
+        <div class="form-group">
+            <label for="nearby">Nearby Famous Place/Shop/School (optional):</label>
+            <input type="text" id="nearby" name="nearby" placeholder="Enter Nearby Famous Place/Shop/School">
+        </div>
+
+        <div class="form-group">
+            <label for="pincode">Pincode:</label>
+            <input type="text" id="pincode" name="pincode" placeholder="Enter Pincode" required>
+        </div>
+
+        <div class="form-group">
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" placeholder="Enter City" required>
+        </div>
+
+        <div class="form-group">
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" placeholder="Enter State" required>
+        </div>
+
+        <button type="submit">Submit Order</button>
+    </form>
+    <button id="adminAccess" onclick="showOrders()">Admin Access</button>
+    <div id="ordersContainer">
+        <h2>Orders</h2>
+        <ul id="ordersList"></ul>
+    </div>
+    <div id="confirmationMessage" style="display: none; color: green; text-align: center; margin-top: 20px;">
+        Your order has been submitted successfully!
+    </div>
+</div>
+
+<script>
+    var orders = [];
+
+    function submitOrder() {
+        var productNumber = document.getElementById('productNumber').value;
+        var house = document.getElementById('house').value;
+        var nameContact = document.getElementById('nameContact').value;
+        var area = document.getElementById('area').value;
+        var nearby = document.getElementById('nearby').value;
+        var pincode = document.getElementById('pincode').value;
+        var city = document.getElementById('city').value;
+        var state = document.getElementById('state').value;
+
+        if (!productNumber || !house || !nameContact || !area || !pincode || !city || !state) {
+            alert('⚠️ Please enter all details.');
+            return;
+        }
+
+        var orderDetails = {
+            productNumber: productNumber,
+            house: house,
+            nameContact: nameContact,
+            area: area,
+            nearby: nearby,
+            pincode: pincode,
+            city: city,
+            state: state
+        };
+
+        orders.push(orderDetails);
+
+        document.getElementById('adminAccess').style.display = 'block';
+
+        document.getElementById('confirmationMessage').style.display = 'block'; // Show confirmation message
+
+        document.getElementById('orderForm').reset();
+
+        // No need to send email anymore, as the form submits directly to Web3Forms API
+        // sendEmail(orders);
+    }
+
+    function showOrders() {
+        var ordersList = document.getElementById('ordersList');
+        ordersList.innerHTML = '';
+
+        orders.forEach(function
