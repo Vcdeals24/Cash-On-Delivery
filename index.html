@@ -10,15 +10,13 @@
             margin: 0;
             padding: 0;
             font-family: 'Poppins', sans-serif;
-            background-image: url('https://telegra.ph/file/0858aadb9a6a2aa126ef2.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            background-color: #ffffff; /* White background */
             color: #fff;
         }
 
         .container {
-            max-width: 500px;
+            width: 90%; /* Adjust width as needed */
+            max-width: 500px; /* Maximum width for content */
             margin: 50px auto;
             padding: 20px;
             border-radius: 10px;
@@ -33,7 +31,7 @@
         }
 
         .form-group {
-            margin-bottom: 5px;
+            margin-bottom: 20px;
         }
 
         label {
@@ -66,6 +64,19 @@
 
         button:hover {
             background-color: #45a049;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .container {
+                width: 95%;
+            }
+        }
+
+        @media only screen and (max-width: 400px) {
+            .container {
+                width: 100%;
+                border-radius: 0;
+            }
         }
     </style>
 </head>
@@ -125,7 +136,7 @@
 </div>
 
 <a href="https://telegram.me/Vcdeals24" target="_blank" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
-    <img src="https://telegram.org/favicon.ico" alt="Telegram Logo" style="width: 60px; height: 60px;">
+    <img src="https://telegram.org/favicon.ico" alt="Join VC 🚚" style="width: 60px; height: 60px;">
 </a>
 
 <script>
@@ -165,5 +176,4 @@
 </script>
 
 </body>
-    </html>
-    
+</html>
