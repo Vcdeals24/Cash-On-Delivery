@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VCdeals24 COD 🚚</title>
     <link rel="icon" type="image/png" href="https://telegra.ph/file/1a1642f4b13a6330d2d3f.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* General Styles */
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Montserrat)'
-            background-color: #000000; /* White background */
-            color: #FF3131; /* Black text */
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000000; /* Black background */
+            color: #ffffff; /* White text */
         }
 
         /* Navbar Styles */
@@ -23,13 +24,10 @@
 
         .navbar img {
             width: 40px; /* Adjust as needed */
-        }
-
-        .navbar img {
-    display: block; /* Ensures the image is displayed as a block element */
-    margin: 0 auto; /* Centers the image horizontally */
-    width: 80px; /* Adjust the width as needed */
-    height: auto; /* Allows the height to adjust proportionally */
+            display: block; /* Ensures the image is displayed as a block element */
+            margin: 0 auto; /* Centers the image horizontally */
+            width: 80px; /* Adjust the width as needed */
+            height: auto; /* Allows the height to adjust proportionally */
         }
 
         /* Container Styles */
@@ -50,7 +48,7 @@
         }
 
         .form-group {
-            margin-bottom: 310px;
+            margin-bottom: 20px;
         }
 
         label {
@@ -78,11 +76,12 @@
             border-radius: 6px;
             cursor: pointer;
             font-size: 1.1rem;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         button:hover {
             background-color: #45a049;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
         }
 
         /* Footer Styles */
@@ -141,7 +140,8 @@
         
         <div class="form-group">
             <label for="area">Road Name/Area/Colony:</label>
-            <input type="text" id="area" name="area" placeholder="Enter Road Name/Area/Colony" required</div>
+            <input type="text" id="area" name="area" placeholder="Enter Road Name/Area/Colony" required>
+        </div>
 
         <div class="form-group">
             <label for="nearby">Nearby Famous Place/Shop/School (optional):</label>
@@ -184,7 +184,7 @@
         var city = document.getElementById('city').value;
         var state = document.getElementById('state').value;
 
-        if (!productNumber || !house || !nameContact || !area || !pincode || !city || !state) {
+        if (!productNumber || !house || !contact || !area || !pincode || !city || !state) {
             alert('⚠️ Please enter all details.');
             return;
         }
