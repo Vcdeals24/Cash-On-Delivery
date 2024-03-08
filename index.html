@@ -24,8 +24,9 @@
         }
 
         .navbar img {
-            width: 250px; /* Adjust the width as needed */
+            width: 240px; /* Adjust the width as needed */
             height: auto; /* Allows the height to adjust proportionally */
+            remove margin-left: -15px;
         }
 
         /* Container Styles */
@@ -38,15 +39,23 @@
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
         }
 
-        /* Alert Text */
-        .alert-text {
-            font-size: 1.1rem;
+        /* Form and Button Styles */
+        h1 {
             text-align: center;
-            margin-top: 20px;
-            margin-bottom: 20px;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
         }
 
-        /* Form and Button Styles */
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
         input[type="text"] {
             width: 100%;
             padding: 12px;
@@ -74,6 +83,14 @@
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
         }
 
+        /* Footer Styles */
+        footer {
+            background-color: #333; /* Dark background color */
+            color: #fff; /* White text */
+            text-align: center;
+            padding: 20px;
+        }
+
         /* Responsive Styles */
         @media only screen and (max-width: 768px) {
             .container {
@@ -97,7 +114,7 @@
 
 <!-- Alert Text -->
 <div class="container">
-    <p class="alert-text">Alert 🚨 Thanks You For Using VCdeals24 !! Cash on Delivery Available All INDIA - VC Team ❤️</p>
+    <p style="margin-top: 20px; margin-bottom: 20px; font-size: 1.1rem; text-align: center">Alert 🚨 Thanks You For Using VCdeals24 !! Cash on Delivery Available All INDIA - VC Team ❤️</p>
 </div>
 
 <!-- Main Content -->
