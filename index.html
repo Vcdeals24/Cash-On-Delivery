@@ -19,14 +19,21 @@
         /* Navbar Styles */
         .navbar {
             background-color: #000000; /* Dark background color */
-            padding: 0px;
+            padding: 10px;
             text-align: center; /* Center align navbar text */
+            transition: all 0.2s ease; /* Transition effect */
         }
 
-        .navbar img {
-            width: 240px; /* Adjust the width as needed */
-            height: auto; /* Allows the height to adjust proportionally */
-            remove margin-left: -15px;
+        .navbar a {
+            text-decoration: none;
+            color: #ffffff;
+            padding: 10px 20px;
+            transition: all 0.2s ease; /* Transition effect */
+        }
+
+        .navbar a:hover {
+            background-color: transparent;
+            border-bottom: 2px solid #FF474C; /* Red underline on hover */
         }
 
         /* Container Styles */
@@ -39,50 +46,6 @@
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
         }
 
-        /* Form and Button Styles */
-        h1 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .form-group {
-            margin-bottom: 10px;
-        }
-
-        label {
-            display: block;
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
-
-        input[type="text"] {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            box-sizing: border-box;
-            font-size: 1rem;
-            color: #000;
-            background-color: #fff;
-        }
-
-        button {
-            background-color: #4CAF50;
-            color: #fff;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 1.1rem;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #FF474C;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-        }
-
         /* Footer Styles */
         footer {
             background-color: #000000; /* Dark background color */
@@ -92,16 +55,21 @@
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
         }
 
-        /* Responsive Styles */
-        @media only screen and (max-width: 768px) {
-            .container {
-                max-width: 95%;
-            }
+        /* Animation */
+        .animation {
+            transition: all 0.2s ease; /* Transition effect */
         }
 
-        @media only screen and (max-width: 400px) {
-            .container {
-                border-radius: 0;
+        .animation-right {
+            animation: slideRightToLeft 0.2s ease;
+        }
+
+        @keyframes slideRightToLeft {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
             }
         }
     </style>
@@ -110,110 +78,48 @@
     
 <!-- Navbar -->
 <div class="navbar">
-    <img src="https://telegra.ph/file/88a4a64e6f8a97cacc2e9.jpg" alt="Vcdeals24">
+    <a href="#home" class="animation">HOME</a>
+    <a href="#about" class="animation">ABOUT</a>
+    <a href="#welcome" class="animation">WELCOME TO VC</a>
+    <a href="#bots" class="animation">OUR BOT LIST</a>
+    <a href="#channels" class="animation">CHANNEL LIST</a>
 </div>
 
-<!-- Alert Text -->
-<div class="container">
-    <p style="margin-top: 20px; margin-bottom: 20px; font-size: 1.1rem; text-align: center">Alert 🚨 Thanks You For Using VCdeals24 !! Cash on Delivery Available All INDIA - VC Team ❤️</p>
-</div>
+<!-- Home Section -->
+<section id="home" class="container">
+    <!-- Your home content goes here -->
+</section>
 
-<!-- Main Content -->
-<div class="container">
-    <h1>Order Details</h1>
-    <form id="orderForm" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="53aace64-ac9b-4e4b-baa1-e154c6c416ba">
-        <input type="hidden" name="redirect" value="https://vcdeals24.github.io/Cash-On-Delivery-/">
-        <input type="hidden" name="subject" value="${name} New Submission from VCdeals24"/>
-        <div class="form-group">
-            <label for="productNumber">Product Number:</label>
-            <input type="text" id="productNumber" name="productNumber" placeholder="Enter Product Number" required>
-        </div>
+<!-- About Section -->
+<section id="about" class="container">
+    <!-- Your about content goes here -->
+</section>
 
-        <div class="form-group">
-            <label for="contact">Mobile Number:</label>
-            <input type="text" id="contact" name="contact" placeholder="Enter Mobile Number" required>
-        </div>
+<!-- Welcome Section -->
+<section id="welcome" class="container">
+    <h1 class="animation animation-right">WELCOME TO VC</h1>
+    <p class="animation animation-right">VCdeals24 - A Trusted Deals And Electronics And Shopping Items And Groceries Loot All Items Lowest Prices On</p>
+    <p class="animation animation-right">We Will Provide you the Shopping Loots, Deals & Offers 🤍🏌️ - VC Team</p>
+</section>
 
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter Full Name" required>
-        </div>
+<!-- Bot List Section -->
+<section id="bots" class="container">
+    <h1 class="animation animation-right">OUR BOT LIST</h1>
+    <a href="https://t.me/PanindiaFilmz_bot" class="animation animation-right">FILTER BOT 1</a>
+    <a href="https://t.me/ViewCinemasRobot" class="animation animation-right">FILTER BOT 2</a>
+</section>
 
-        <div class="form-group">
-            <label for="house">House no./Building Name:</label>
-            <input type="text" id="house" name="house" placeholder="Enter House no./Building Name" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="area">Road Name/Area/Colony:</label>
-            <input type="text" id="area" name="area" placeholder="Enter Road Name/Area/Colony" required>
-        </div>
-
-        <div class="form-group">
-            <label for="nearby">Nearby Famous Place/Shop/School (optional):</label>
-            <input type="text" id="nearby" name="nearby" placeholder="Enter Nearby Famous Place/Shop/School">
-        </div>
-
-        <div class="form-group">
-            <label for="pincode">Pincode:</label>
-            <input type="text" id="pincode" name="pincode" placeholder="Enter Pincode" required>
-        </div>
-
-        <div class="form-group">
-            <label for="city">City:</label>
-            <input type="text" id="city" name="city" placeholder="Enter City" required>
-        </div>
-
-        <div class="form-group">
-            <label for="state">State:</label>
-            <input type="text" id="state" name="state" placeholder="Enter State" required>
-        </div>
-        
-        <button type="submit">Submit Order</button>
-    </form>
-</div>
+<!-- Channel List Section -->
+<section id="channels" class="container">
+    <h1 class="animation animation-right">CHANNEL LIST</h1>
+    <a href="https://t.me/PanindiaFilmZ" class="animation animation-right">PANINDIAFILMZ</a>
+    <a href="https://t.me/ViewCinemas" class="animation animation-right">VIEWCINEMAS</a>
+</section>
 
 <!-- Footer -->
 <footer>
     © 2024 VCdeals24. All rights reserved.
 </footer>
-
-<script>
-    function submitOrder() {
-        var productNumber = document.getElementById('productNumber').value;
-        var contact = document.getElementById('contact').value;
-        var name = document.getElementById('name').value;
-        var house = document.getElementById('house').value;
-        var area = document.getElementById('area').value;
-        var nearby = document.getElementById('nearby').value;
-        var pincode = document.getElementById('pincode').value;
-        var city = document.getElementById('city').value;
-        var state = document.getElementById('state').value;
-
-        if (!productNumber || !house || !contact || !area || !pincode || !city || !state) {
-            alert('⚠️ Please enter all details.');
-            return;
-        }
-
-        var orderDetails = {
-            productNumber: productNumber,
-            contact: contact,
-            name: name,
-            house: house,
-            area: area,
-            nearby: nearby,
-            pincode: pincode,
-            city: city,
-            state: state
-        };
-
-        // You can perform further actions with the order details if needed
-
-        document.getElementById('confirmationMessage').style.display = 'block'; // Show confirmation message
-        document.getElementById('orderForm').reset();
-    }
-</script>
 
 </body>
 </html>
