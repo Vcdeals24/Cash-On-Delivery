@@ -1,195 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VCdeals24 COD 🚚</title>
-    <link rel="icon" type="image/png" href="https://telegra.ph/file/1a1642f4b13a6330d2d3f.jpg">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* General Styles */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Montserrat', sans-serif;
-            background-color: #000000; /* Black background */
-            color: #ffffff; /* White text */
-        }
-
-        /* Navbar Styles */
-        .navbar {
-            background-color: #000000; /* Dark background color */
-            padding: 10px;
-            text-align: center; /* Center align navbar text */
-        }
-
-        .navbar a {
-            text-decoration: none;
-            color: #ffffff;
-            padding: 10px 20px;
-            transition: all 0.2s ease; /* Transition effect */
-        }
-
-        .navbar a:hover {
-            background-color: transparent;
-            border-bottom: 2px solid #FF474C; /* Red underline on hover */
-        }
-
-        /* Container Styles */
-        .container {
-            max-width: 90%;
-            margin: 50px auto;
-            padding: 20px;
-            border-radius: 10px;
-            background-color: rgba(0, 0, 0, 0.9);
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-        }
-
-        /* Footer Styles */
-        footer {
-            background-color: #000000; /* Dark background color */
-            color: #fff; /* White text */
-            text-align: center;
-            padding: 20px;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-        }
-
-        /* Animation */
-        .animation {
-            transition: all 0.2s ease; /* Transition effect */
-        }
-
-        .animation-right {
-            animation: slideRightToLeft 0.2s ease;
-        }
-
-        @keyframes slideRightToLeft {
-            from {
-                transform: translateX(100%);
-            }
-            to {
-                transform: translateX(0);
-            }
-        }
-
-        /* Responsive Styles */
-        @media only screen and (max-width: 768px) {
-            .container {
-                max-width: 95%;
-            }
-        }
-
-        @media only screen and (max-width: 400px) {
-            .container {
-                border-radius: 0;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delivery Animation</title>
+<style>
+  .container {
+    position: relative;
+    width: 600px;
+    height: 300px;
+    background-color: #f2f2f2;
+    overflow: hidden;
+  }
+  
+  .man {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    width: 80px;
+    height: 120px;
+    background-color: #333;
+    animation: packOrder 4s linear infinite;
+  }
+  
+  .van {
+    position: absolute;
+    bottom: 0;
+    left: -150px;
+    width: 150px;
+    height: 80px;
+    background-color: #ff6600;
+    animation: moveVan 4s linear infinite;
+  }
+  
+  @keyframes packOrder {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-50px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes moveVan {
+    0% {
+      left: -150px;
+    }
+    100% {
+      left: calc(100% + 150px);
+    }
+  }
+</style>
 </head>
 <body>
-    
-<!-- Navbar -->
-<div class="navbar">
-    <a href="#home" class="animation">HOME</a>
-    <a href="#about" class="animation">ABOUT</a>
-    <a href="#welcome" class="animation">WELCOME</a>
-    <a href="#bots" class="animation">BOT LIST</a>
-    <a href="#channels" class="animation">CHANNEL LIST</a>
-    <img src="https://telegra.ph/file/88a4a64e6f8a97cacc2e9.jpg" alt="Vcdeals24">
-</div>
 
-<!-- Home Section -->
-<section id="home" class="container">
-    <!-- Your home content goes here -->
-</section>
-
-<!-- About Section -->
-<section id="about" class="container">
-    <!-- Your about content goes here -->
-</section>
-
-<!-- Welcome Section -->
-<section id="welcome" class="container">
-    <h1 class="animation animation-right">WELCOME</h1>
-    <p class="animation animation-right">VCdeals24 - A Trusted Deals And Electronics And Shopping Items And Groceries Loot All Items Lowest Prices On</p>
-    <p class="animation animation-right">We Will Provide you the Shopping Loots, Deals & Offers 🤍🏌️ - VC Team</p>
-    <a href="https://t.me/VCdeals24" class="animation animation-right">VCdeals24</a>
-</section>
-
-<!-- Bot List Section -->
-<section id="bots" class="container">
-    <h1 class="animation animation-right">BOT LIST</h1>
-    <a href="https://t.me/PanindiaFilmz_bot" class="animation animation-right">FILTER BOT 1</a>
-    <a href="https://t.me/ViewCinemasRobot" class="animation animation-right">FILTER BOT 2</a>
-</section>
-
-<!-- Channel List Section -->
-<section id="channels" class="container">
-    <h1 class="animation animation-right">CHANNEL LIST</h1>
-    <a href="https://t.me/PanindiaFilmZ" class="animation animation-right">PanindiaFilmZ</a>
-    <a href="https://t.me/ViewCinemas" class="animation animation-right">ViewCinemas</a>
-</section>
-
-<!-- Form Section -->
 <div class="container">
-    <h1>Order Details</h1>
-    <form id="orderForm" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="53aace64-ac9b-4e4b-baa1-e154c6c416ba">
-        <input type="hidden" name="redirect" value="https://vcdeals24.github.io/Cash-On-Delivery-/">
-        <input type="hidden" name="subject" value="${name} New Submission from VCdeals24"/>
-        <div class="form-group">
-            <label for="productNumber">Product Number:</label>
-            <input type="text" id="productNumber" name="productNumber" placeholder="Enter Product Number" required>
-        </div>
-
-        <div class="form-group">
-            <label for="contact">Mobile Number:</label>
-            <input type="text" id="contact" name="contact" placeholder="Enter Mobile Number" required>
-        </div>
-
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter Full Name" required>
-        </div>
-
-        <div class="form-group">
-            <label for="house">House no./Building Name:</label>
-            <input type="text" id="house" name="house" placeholder="Enter House no./Building Name" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="area">Road Name/Area/Colony:</label>
-            <input type="text" id="area" name="area" placeholder="Enter Road Name/Area/Colony" required>
-        </div>
-
-        <div class="form-group">
-            <label for="nearby">Nearby Famous Place/Shop/School (optional):</label>
-            <input type="text" id="nearby" name="nearby" placeholder="Enter Nearby Famous Place/Shop/School">
-        </div>
-
-        <div class="form-group">
-            <label for="pincode">Pincode:</label>
-            <input type="text" id="pincode" name="pincode" placeholder="Enter Pincode" required>
-        </div>
-
-        <div class="form-group">
-            <label for="city">City:</label>
-            <input type="text" id="city" name="city" placeholder="Enter City" required>
-        </div>
-
-        <div class="form-group">
-            <label for="state">State:</label>
-            <input type="text" id="state" name="state" placeholder="Enter State" required>
-        </div>
-        
-        <button type="submit">Submit Order</button>
-    </form>
+  <div class="man"></div>
+  <div class="van"></div>
 </div>
-
-<!-- Footer -->
-<footer>
-    © 2024 VCdeals24. All rights reserved.
-</footer>
 
 </body>
 </html>
