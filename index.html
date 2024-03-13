@@ -1,94 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Delivery Animation</title>
-<style>
-  body {
-    margin: 0;
-    background-color: #000; /* Set black background color */
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Delivered In 5 Days</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000000; /* Black background */
+            color: #ffffff; /* White text */
+            overflow: hidden; /* Prevent scrollbars */
+        }
 
-  .container {
-    position: relative;
-    width: 100%;
-    height: 50vh;
-    background-color: #000; /* Set black background color */
-    overflow: hidden;
-  }
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-  .man {
-    position: absolute;
-    bottom: 0;
-    left: 5%;
-    width: 10%; /* Adjust width */
-    height: 30%; /* Adjust height */
-    background-image: url('https://telegra.ph/file/2f8d79aa23255be8aab8d.jpg');
-    background-size: cover;
-    animation: packOrder 4s linear infinite;
-  }
+        .animated-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1; /* Ensure text appears above the video */
+            text-align: center;
+        }
 
-  .van {
-    position: absolute;
-    bottom: 0;
-    left: -15%;
-    width: 20%; /* Adjust width */
-    height: 20%; /* Adjust height */
-    background-image: url('https://telegra.ph/file/7df39281c098eb983f45a.jpg');
-    background-size: cover;
-    animation: moveVan 4s linear infinite;
-  }
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%; /* Ensure video fills the container */
+            height: auto; /* Maintain aspect ratio */
+            max-width: 1280px; /* Maximum width for responsiveness */
+            max-height: 512px; /* Maximum height for responsiveness */
+            object-fit: cover; /* Ensure the video covers the entire container */
+        }
 
-  @keyframes packOrder {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10%);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
 
-  @keyframes moveVan {
-    0% {
-      left: -15%;
-    }
-    100% {
-      left: 100%;
-    }
-  }
-
-  /* Media query for smaller screens */
-  @media (max-width: 768px) {
-    .container {
-      height: 40vh;
-    }
-
-    .man {
-      width: 15%;
-      height: 20%;
-    }
-
-    .van {
-      width: 25%;
-      height: 15%;
-    }
-  }
-</style>
+        @media only screen and (max-width: 1280px) {
+            video {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <video autoplay loop>
+            <source src="https://graph.org/file/d70d09c988893e3d41e94.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h1 class="animated-text">Your Order Confirmed!! Delivery In 5 Day's ✅</h1>
+    </div>
 
-<div class="container">
-  <div class="man"></div>
-  <div class="van"></div>
-</div>
-
-<script>
-  // Optional: JavaScript code can go here for any additional functionality
-</script>
-
+    <!-- Footer -->
+    <footer>
+        © 2024 VCdeals24. All rights reserved.
+    </footer>
 </body>
 </html>
