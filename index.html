@@ -19,15 +19,14 @@
         /* Navbar Styles */
         .navbar {
             background-color: #000000; /* Dark background color */
-            padding: 10px;
+            padding: 0px;
+            text-align: center; /* Center align navbar text */
         }
 
         .navbar img {
-            width: 40px; /* Adjust as needed */
-            display: block; /* Ensures the image is displayed as a block element */
-            margin: 0 auto; /* Centers the image horizontally */
-            width: 80px; /* Adjust the width as needed */
+            width: 240px; /* Adjust the width as needed */
             height: auto; /* Allows the height to adjust proportionally */
+            remove margin-left: -15px;
         }
 
         /* Container Styles */
@@ -38,7 +37,7 @@
             border-radius: 10px;
             background-color: rgba(0, 0, 0, 0.9);
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-            }
+        }
 
         /* Form and Button Styles */
         h1 {
@@ -86,10 +85,11 @@
 
         /* Footer Styles */
         footer {
-            background-color: #333; /* Dark background color */
+            background-color: #000000; /* Dark background color */
             color: #fff; /* White text */
             text-align: center;
             padding: 20px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
         }
 
         /* Responsive Styles */
@@ -115,7 +115,7 @@
 
 <!-- Alert Text -->
 <div class="container">
-    <p style="margin-top: 20px auto; font-size: 1.1rem; height: auto; display: block; text-align: center; animation: liner Infinity;">Alert 🚨 Thanks You For Using °VCdeals24 !! Cash on Delivery Available All INDIA - VC Team ❤️</p>
+    <p style="margin-top: 20px; margin-bottom: 20px; animation: liner Infinity; font-size: 1.1rem; text-align: center">Alert 🚨 Thanks You For Using VCdeals24 !! Cash on Delivery Available All INDIA - VC Team ❤️</p>
 </div>
 
 <!-- Main Content -->
@@ -124,6 +124,7 @@
     <form id="orderForm" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="53aace64-ac9b-4e4b-baa1-e154c6c416ba">
         <input type="hidden" name="redirect" value="https://vcdeals24.github.io/Cash-On-Delivery-/">
+        <input type="hidden" name="subject" value="${name} New Submission from VCdeals24"/>
         <div class="form-group">
             <label for="productNumber">Product Number:</label>
             <input type="text" id="productNumber" name="productNumber" placeholder="Enter Product Number" required>
@@ -215,4 +216,4 @@
 </script>
 
 </body>
-    </html>
+</html>
